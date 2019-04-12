@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'navigation-bar',
+  name: 'NavigationBar',
   data: function() {
     return {
       menu: [
