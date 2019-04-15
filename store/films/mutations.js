@@ -1,7 +1,6 @@
 const mutations = {
-  setFilms(state, payload) {
+  updateFilms(state, payload) {
     state.filmLists = payload
-    return state
   }
 }
 

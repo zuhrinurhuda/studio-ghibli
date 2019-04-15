@@ -17,7 +17,13 @@ export default {
   },
   computed: {
     ...mapState({
-      films: ({ films }) => films.filmLists
+      searchText: ({ searchText }) => searchText,
+      films: ({ films, searchText }) => {
+        return films.filmLists.filter(
+          film =>
+            film.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
+        )
+      }
     })
   },
   created: function() {
