@@ -1,6 +1,6 @@
 <template>
   <base-section>
-    <base-card v-for="film in films" :key="film.id" :card="film" />
+    <base-card />
   </base-section>
 </template>
 
@@ -17,21 +17,17 @@ export default {
   },
   computed: {
     ...mapState({
-      films: ({ films, searchText }) => {
-        return films.filmLists.filter(
-          film =>
-            film.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
-        )
-      }
+      // search
     })
-  },
-  created: function() {
-    this.getFilms()
   },
   methods: {
     ...mapActions({
-      getFilms: 'films/getFilms'
+
     })
   }
 }
 </script>
+
+<style>
+
+</style>
