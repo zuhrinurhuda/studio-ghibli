@@ -1,10 +1,10 @@
 <template>
   <base-section>
     <base-card
-      v-for="film in films"
-      :key="film.id"
-      :title="film.title"
-      :description="film.description"
+      v-for="location in locations"
+      :key="location.id"
+      :title="location.name"
+      :description="location.climate"
     />
   </base-section>
 </template>
@@ -21,20 +21,20 @@ export default {
   },
   computed: {
     ...mapState({
-      films: ({ films, searchText }) => {
-        return films.filmList.filter(
-          film =>
-            film.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
+      locations: ({ locations, searchText }) => {
+        return locations.locationList.filter(
+          location =>
+            location.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
         )
       }
     })
   },
   created: function() {
-    this.getFilms()
+    this.getLocations()
   },
   methods: {
     ...mapActions({
-      getFilms: 'films/getFilms'
+      getLocations: 'locations/getLocations'
     })
   }
 }

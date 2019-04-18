@@ -27,7 +27,11 @@ export default {
   },
   computed: {
     shortDesc: function() {
-      return this.description.substr(0, 100) + '...'
+      if (this.description.length > 99) {
+        return this.description.substr(0, 100) + '...'
+      }
+
+      return this.description
     }
   }
 }

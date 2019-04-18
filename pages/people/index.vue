@@ -12,7 +12,6 @@
 <script>
 import BaseSection from '~/components/commons/BaseSection.vue'
 import BaseCard from '~/components/commons/BaseCard.vue'
-
 import { mapState, mapActions } from 'vuex'
 
 export default {
