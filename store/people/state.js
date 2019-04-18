@@ -1,5 +1,5 @@
 const state = () => ({
-  people: []
+  peopleList: []
 })
 
 export default state

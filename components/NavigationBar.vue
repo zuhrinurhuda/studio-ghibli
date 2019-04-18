@@ -21,11 +21,11 @@
           >
             <form class="uk-search uk-search-navbar uk-width-1-1">
               <input
-                :value="searchText"
-                @input="updateSearchText($event.target.value)"
                 class="uk-search-input"
                 type="search"
                 placeholder="Search..."
+                :value="searchText"
+                @input="updateSearchText($event.target.value)"
               />
             </form>
           </div>

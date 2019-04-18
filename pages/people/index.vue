@@ -1,6 +1,11 @@
 <template>
   <base-section>
-    <base-card />
+    <base-card
+      v-for="person in people"
+      :key="person.id"
+      :title="person.name"
+      :description="person.age"
+    />
   </base-section>
 </template>
 
@@ -17,17 +22,21 @@ export default {
   },
   computed: {
     ...mapState({
-      // search
+      people: ({ people, searchText }) => {
+        return people.peopleList.filter(
+          person =>
+            person.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
+        )
+      }
     })
+  },
+  created: function() {
+    this.getPeople()
   },
   methods: {
     ...mapActions({
-
+      getPeople: 'people/getPeople'
     })
   }
 }
 </script>
-
-<style>
-
-</style>

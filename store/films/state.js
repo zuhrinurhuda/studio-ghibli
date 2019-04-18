@@ -1,5 +1,5 @@
 const state = () => ({
-  filmLists: []
+  filmList: []
 })
 
 export default state

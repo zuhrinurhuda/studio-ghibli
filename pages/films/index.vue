@@ -1,6 +1,11 @@
 <template>
   <base-section>
-    <base-card v-for="film in films" :key="film.id" :card="film" />
+    <base-card
+      v-for="film in films"
+      :key="film.id"
+      :title="film.title"
+      :description="film.description"
+    />
   </base-section>
 </template>
 
@@ -18,7 +23,7 @@ export default {
   computed: {
     ...mapState({
       films: ({ films, searchText }) => {
-        return films.filmLists.filter(
+        return films.filmList.filter(
           film =>
             film.title.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
         )
