@@ -1,5 +1,5 @@
 const mutations = {
-  updateMutations(state, payload) {
+  updateSpecies(state, payload) {
     state.speciesList = payload
   }
 }

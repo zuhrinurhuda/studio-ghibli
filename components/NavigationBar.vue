@@ -48,7 +48,7 @@ export default {
         { id: 3, name: 'People', path: '/people' },
         { id: 4, name: 'Locations', path: '/locations' },
         { id: 5, name: 'Species', path: '/species' },
-        { id: 6, name: 'Vehicle', path: '/vehicle' }
+        { id: 6, name: 'Vehicles', path: '/vehicles' }
       ],
       searchText: ''
     }

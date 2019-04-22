@@ -1,10 +1,10 @@
 <template>
   <base-section>
     <base-card
-      v-for="species in speciesList"
-      :key="species.id"
-      :title="species.name"
-      :description="species.hair_colors"
+      v-for="vehicle in vehicles"
+      :key="vehicle.id"
+      :title="vehicle.name"
+      :description="vehicle.description"
     />
   </base-section>
 </template>
@@ -21,20 +21,20 @@ export default {
   },
   computed: {
     ...mapState({
-      speciesList: ({ species, searchText }) => {
-        return species.speciesList.filter(
-          species =>
-            species.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
+      vehicles: ({ vehicles, searchText }) => {
+        return vehicles.vehicleList.filter(
+          vehicle =>
+            vehicle.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1
         )
       }
     })
   },
   created: function() {
-    this.getSpecies()
+    this.getVehicles()
   },
   methods: {
     ...mapActions({
-      getSpecies: 'species/getSpecies'
+      getVehicles: 'vehicles/getVehicles'
     })
   }
 }
